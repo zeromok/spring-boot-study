@@ -1,1 +1,11 @@
+spring:
+  main:
+    banner-mode: off
 
+greeting:
+  name: greeting
+  coffee: This is Coffee
+
+droid:
+  id: droid
+  description: This is Droid

@@ -9,3 +9,16 @@ greeting:
 droid:
   id: droid
   description: This is Droid
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #모든 endpoint 활성
+#        include: env, info, health
+  endpoint:
+    health:
+      show-details: always # 확장된 정보 보여줌
+    env:
+      show-values: always # 숨겨진 값 보여줌

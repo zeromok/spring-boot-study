@@ -12,8 +12,12 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @SpringBootApplication
 public class SburRestDemoApplication {
 
+	public static void main( String[] args ) {
+		SpringApplication.run( SburRestDemoApplication.class, args );
+	}
+
 	@Bean
-	public RedisOperations< String, Aircraft > redisOperations( RedisConnectionFactory factory  ) {
+	public RedisOperations< String, Aircraft > redisOperations( RedisConnectionFactory factory ) {
 
 		Jackson2JsonRedisSerializer< Aircraft > serializer = new Jackson2JsonRedisSerializer<>( Aircraft.class );
 
@@ -23,10 +27,6 @@ public class SburRestDemoApplication {
 		template.setKeySerializer( new StringRedisSerializer() );
 
 		return template;
-	}
-
-	public static void main( String[] args ) {
-		SpringApplication.run( SburRestDemoApplication.class, args );
 	}
 
 }

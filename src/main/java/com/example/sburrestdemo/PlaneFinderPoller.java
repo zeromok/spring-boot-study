@@ -11,10 +11,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Component
 public class PlaneFinderPoller {
 
-	private WebClient client = WebClient.create( "http://localhost:7634/aircraft" );
-
 	private final RedisConnectionFactory connectionFactory;
 	private final RedisOperations< String, Aircraft > redisOperations;
+	private WebClient client = WebClient.create( "http://localhost:7634/aircraft" );
 
 	public PlaneFinderPoller( RedisConnectionFactory connectionFactory,
 		RedisOperations< String, Aircraft > redisOperations ) {
